@@ -6,6 +6,10 @@ from the OASIS Longitudinal dataset.
 The model attempts to identify Converted patients but due to limited 
 data this class has low reliability.
 
+For a full non-technical explanation of this project including 
+every decision made and why, please read the 
+[Project Documentation](docs/documentation.md).
+
 ## Live Demo
 Run locally using the instructions below.
 
