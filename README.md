@@ -8,6 +8,8 @@ imaging data from the OASIS Longitudinal dataset.
 Run locally using the instructions below.
 
 ## Project Structure
+
+```
 alzheimers_predictor/
 ├── app/
 │   ├── app.py
@@ -27,7 +29,9 @@ alzheimers_predictor/
 │   ├── eda.ipynb
 │   ├── preprocessing.ipynb
 │   └── modeling.ipynb
+├── .gitignore
 └── README.md
+```
 
 ## Dataset
 OASIS Longitudinal MRI Data -- 373 rows, 150 unique patients, 
