@@ -336,6 +336,43 @@ medical professional.
 
 ---
 
+## What I Learned Building This Project
+
+This project taught me so much more than just how to train a 
+machine learning model.
+
+Before this project I had never worked with real clinical data. 
+Learning to look at a dataset and ask the right questions before 
+writing any code was one of the most valuable skills I developed.
+
+I learned that data cleaning and preprocessing takes much more 
+time and thought than the actual modeling. Deciding which columns 
+to drop, how to handle missing values, and why scaling matters 
+are decisions that directly affect the quality of your model.
+
+I learned the difference between a notebook and a product. Anyone 
+can train a model. Building something that a real person can open 
+in a browser, interact with, and get meaningful results from is 
+a completely different challenge.
+
+I learned to be honest about limitations. My model cannot 
+reliably predict the Converted class due to limited data. 
+Acknowledging this openly rather than hiding it is what 
+separates a trustworthy project from a misleading one.
+
+I learned that GroupKFold cross validation matters for 
+longitudinal data. A simple train/test split would have 
+given me fake accuracy because the same patient would 
+appear in both training and testing. Understanding why 
+this is a problem and how to fix it properly was one of 
+my favorite moments in this project.
+
+Most importantly I learned that the best way to understand 
+something deeply is to build it yourself, make mistakes, 
+catch them, fix them, and document everything along the way.
+
+---
+
 ## Future Improvements
 
 If I were to continue developing this project I would focus 
