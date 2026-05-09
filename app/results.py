@@ -3,13 +3,16 @@ import pandas as pd
 import numpy as np
 import pickle
 import matplotlib.pyplot as plt
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def show_results():
     st.title("🧠 Prediction Results")
     st.markdown("---")
 
     # Load model
-    with open("../model/alzheimers_model.pkl", "rb") as f:
+    with open(os.path.join(BASE_DIR, "model", "alzheimers_model.pkl"), "rb") as f:
         model = pickle.load(f)
 
     # Get input data from session state
@@ -69,12 +72,11 @@ def show_results():
     # Patient vs dataset comparison
     st.header("How does this patient compare to the dataset?")
 
-    df_orig = pd.read_csv("../data/oasis_longitudinal.csv")
-    
+    df_orig = pd.read_csv(os.path.join(BASE_DIR, "data", "oasis_longitudinal.csv"))
+
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        avg_mmse = df_orig.groupby("Group")["MMSE"].mean()
         patient_mmse = input_data["MMSE"].values[0]
         st.metric(label="Patient MMSE Score",
                  value=f"{patient_mmse:.1f}",

@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def show_form():
     st.title("🧠 Patient Information Form")
@@ -8,11 +11,11 @@ def show_form():
     st.markdown("---")
 
     # Load scaler
-    with open("../model/scaler.pkl", "rb") as f:
+    with open(os.path.join(BASE_DIR, "model", "scaler.pkl"), "rb") as f:
         scaler = pickle.load(f)
 
     # Load feature names
-    feature_names = pd.read_csv("../data/X_scaled.csv").columns.tolist()
+    feature_names = pd.read_csv(os.path.join(BASE_DIR, "data", "X_scaled.csv")).columns.tolist()
 
     col1, col2 = st.columns(2)
 
@@ -49,7 +52,7 @@ def show_form():
         measurements to Visit 1 to calculate the total amount 
         of change since the patient first came in.
         """)
-        
+
         col3, col4 = st.columns(2)
         with col3:
             first_mmse = st.slider("MMSE Score at First Visit",
@@ -58,7 +61,7 @@ def show_form():
             first_nwbv = st.slider("Brain Volume (nWBV) at First Visit",
                                   min_value=0.64, max_value=0.90,
                                   value=nwbv, step=0.01)
-        
+
         # Calculate engineered features automatically
         mmse_decline = first_mmse - mmse
         nwbv_change = first_nwbv - nwbv
