@@ -422,4 +422,7 @@ Git and GitHub - for version control and sharing the project.
 ---
 
 Author: Madina Alizada
+
+---
+
 Dataset: OASIS Longitudinal MRI Data, Washington University
