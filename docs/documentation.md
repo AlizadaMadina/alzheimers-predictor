@@ -411,6 +411,8 @@ appear in both training and testing. Understanding why
 this is a problem and how to fix it properly was one of 
 my favorite moments in this project.
 
+I also learned how to properly prepare a machine learning app for deployment. It is not enough to just make it work on your own computer. You have to think about file paths, dependencies, and how your app will behave on a completely different machine.
+
 Most importantly I learned that the best way to understand 
 something deeply is to build it yourself, make mistakes, 
 catch them, fix them, and document everything along the way.
