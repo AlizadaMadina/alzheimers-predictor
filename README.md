@@ -11,12 +11,13 @@ every decision made and why, please read the
 [Project Documentation](docs/documentation.md).
 
 ## Live Demo
-Run locally using the instructions below.
+
+Try the app here: https://alzheimers-predictor-madina.streamlit.app
 
 ## Project Structure
 
 ```
-aalzheimers_predictor/
+alzheimers_predictor/
 ├── app/
 │   ├── app.py
 │   ├── home.py
@@ -45,6 +46,7 @@ aalzheimers_predictor/
 │   ├── preprocessing.ipynb
 │   └── modeling.ipynb
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
@@ -59,14 +61,23 @@ Mean accuracy: 71.29%
 ## How to Run
 
 1. Clone the repository
+
+```
 git clone https://github.com/AlizadaMadina/alzheimers-predictor.git
+```
 
 2. Install dependencies
-pip install pandas numpy matplotlib seaborn scikit-learn streamlit
+
+```
+pip install -r requirements.txt
+```
 
 3. Run the web app
+
+```
 cd app
 streamlit run app.py
+```
 
 ## Tech Stack
 - Python
