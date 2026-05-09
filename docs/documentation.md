@@ -2,6 +2,8 @@
 
 Written by Madina Alizada
 
+Live App: https://alzheimers-predictor-madina.streamlit.app
+
 ---
 
 ## Introduction
@@ -17,13 +19,14 @@ English.
 
 ## What is This Project?
 
-This project is a machine learning web application that predicts whether a patient 
-is Nondemented or Demented based on clinical and brain imaging data 
-from the OASIS Longitudinal dataset.
-The model attempts to identify Converted patients but due to limited 
-data this class has low reliability. Converted means 
-the patient was cognitively healthy when they first came in but 
-developed dementia over time.
+This project is a machine learning web application that predicts 
+whether a patient is Nondemented or Demented based on clinical 
+and brain imaging data from the OASIS Longitudinal dataset. The 
+model also attempts to identify patients in a Converted state, 
+meaning patients who were cognitively healthy when they first 
+came in but developed dementia over time. However due to limited 
+training data for this group, predictions for the Converted class 
+have low reliability and should be interpreted with caution.
 
 The prediction is made by a machine learning model called a 
 Random Forest classifier that I trained on real patient data 
@@ -286,6 +289,9 @@ is a strong predictor of dementia.
 
 ## Phase 5 - The Web Application
 
+The app is live and publicly accessible at 
+https://alzheimers-predictor-madina.streamlit.app
+
 I built a three page web application using Streamlit.
 
 Page 1 is the home page. It explains what the app is, why 
@@ -306,6 +312,44 @@ influenced the prediction most, and a comparison of the
 patient's key measurements against the dataset averages.
 
 ---
+
+## Phase 6 - Deploying the App
+
+After building the app locally I deployed it to the internet 
+so anyone in the world can access it without installing 
+anything on their computer.
+
+I used Streamlit Community Cloud which is a free hosting 
+service provided by the same team that builds Streamlit. 
+It connects directly to your GitHub repository and 
+automatically pulls your code and runs it on their servers.
+
+Before deploying I had to fix one technical issue. Locally 
+the app used relative file paths like ../model/scaler.pkl 
+to find the model and data files. These paths work on my 
+computer but break on a server because the folder structure 
+is different. I fixed this by using absolute paths that 
+calculate the correct location of each file regardless of 
+where the app is running.
+
+I also created a requirements.txt file in the root of the 
+project. This file lists all the Python libraries the app 
+needs to run. When Streamlit Cloud builds the app it reads 
+this file and installs everything automatically.
+
+The deployment process itself was very simple. I went to 
+share.streamlit.io, signed in with my GitHub account, 
+selected my repository, set the main file path to 
+app/app.py, and clicked Deploy. Streamlit Cloud took 
+about 2 to 3 minutes to install all the libraries and 
+start the app.
+
+The app is now live and publicly accessible at 
+https://alzheimers-predictor-madina.streamlit.app
+
+Anyone can open that link in any browser on any device 
+and use the app without running any code or installing 
+anything.
 
 ## Model Limitations
 
@@ -375,9 +419,6 @@ catch them, fix them, and document everything along the way.
 
 ## Future Improvements
 
-If I were to continue developing this project I would focus 
-on these areas.
-
 Collecting more data especially on Converted patients to 
 improve prediction for that class.
 
@@ -388,9 +429,6 @@ Adding proper MMSE decline tracking by storing previous
 visit data in a database so the app calculates decline 
 automatically without the doctor needing to remember the 
 first visit score.
-
-Deploying the app to a public server so anyone can access 
-it without running it locally.
 
 Adding more languages to make the app accessible to 
 non-English speaking medical professionals.
