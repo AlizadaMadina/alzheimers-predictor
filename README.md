@@ -1,8 +1,10 @@
 # Alzheimer's Disease Predictor
 
 A machine learning web application that predicts whether a patient 
-is Nondemented, Demented, or Converted based on clinical and brain 
-imaging data from the OASIS Longitudinal dataset.
+is Nondemented or Demented based on clinical and brain imaging data 
+from the OASIS Longitudinal dataset.
+The model attempts to identify Converted patients but due to limited 
+data this class has low reliability.
 
 ## Live Demo
 Run locally using the instructions below.
@@ -10,7 +12,7 @@ Run locally using the instructions below.
 ## Project Structure
 
 ```
-alzheimers_predictor/
+aalzheimers_predictor/
 ├── app/
 │   ├── app.py
 │   ├── home.py
@@ -18,10 +20,19 @@ alzheimers_predictor/
 │   └── results.py
 ├── data/
 │   ├── oasis_longitudinal.csv
+│   ├── oasis_cross-sectional.csv
 │   ├── X_scaled.csv
 │   └── y.csv
 ├── docs/
-│   └── documentation.md
+│   ├── documentation.md
+│   ├── age_distribution.png
+│   ├── brain_volume_distribution.png
+│   ├── class_distribution.png
+│   ├── confusion_matrix.png
+│   ├── correlation_heatmap.png
+│   ├── feature_importance.png
+│   ├── mmse_distribution.png
+│   └── mmse_over_visits.png
 ├── model/
 │   ├── alzheimers_model.pkl
 │   └── scaler.pkl

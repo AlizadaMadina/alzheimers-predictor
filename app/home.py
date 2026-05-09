@@ -11,9 +11,14 @@ def show_home():
     st.header("What is this app?")
     st.write("""
     This web application uses a machine learning model trained on real 
-    clinical data to predict whether a patient is likely to be 
-    Nondemented, Demented, or in a Converted state based on their 
-    cognitive scores and brain measurements.
+    clinical data to predict whether a patient is Nondemented or Demented 
+    based on their cognitive scores and brain measurements.
+    
+    The model also attempts to identify patients in a Converted state, 
+    meaning patients who were cognitively healthy but developed dementia 
+    over time. However due to limited training data for this group, 
+    predictions for the Converted class have low reliability and should 
+    be interpreted with caution.
     
     The model was trained on the OASIS Longitudinal dataset which 
     contains data from 150 patients aged 60 to 98, collected over 
